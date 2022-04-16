@@ -110,7 +110,7 @@ console.log(test("Hello", 3));
 function fullName(firstName, lastName){
    return firstName + " " + lastName;
 }
-console.log(fullName("Jim","Carry"));
+console.log(fullName("Rick","Sanchez"));
 
 //9. Write a function that takes an array of numbers and returns true if the sum 
 //of all the numbers in the array is greater than 100.
@@ -141,25 +141,53 @@ console.log(totalNumber(a,b,c));
 
  //11.Write a function that takes two arrays of numbers and returns true if the average of the elements in the first 
  //array is greater than the average of the elements in the second array.
- 
+var numb1 = [10,50,80];
+var numb2 = [10,5,20];
+var sum = 0;
+
+function getAvg(arr) {
+    let sum =0;
+    for(let i =0; i < arr.length; i++){
+        sum =+ arr[i]
+    }
+    return sum/arr.length;
+}
+function twoArr (arr1, arr2){
+    return getAvg(arr1) > getAvg(arr2);
+}
+console.log(twoArr(numb1, numb2));
 
 
 //12.	Write a function called willBuyDrink that takes a boolean isHotOutside, 
 //and a number moneyInPocket, and returns true if it is hot outside and if 
 //moneyInPocket is greater than 10.50.
 
-//var isHotOutside = true;
-//var moneyInPocket = 0.0
+var isHotOutside = true;
+var moneyInPocket = 5.50;
 
-//fucntion willBuyDrink(isHotOutside, moneyInPocket){
-//    while (isHotOutside){
-//        if(isHotOutside && moneyInPocket > 10.50){
-//            return true;
-//        }
- //       else{
- //           moneyInPocket +=10
- //      }
-  //  }
+function willBuyDrink(isHot, money){
+        if(isHot && money > 10.50){
+            return true;
+       }
+        else{
+           return false;
+      }
+    }
+    console.log(willBuyDrink(isHotOutside, moneyInPocket));
 
   //13.Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+  //create a function called myGame that returns "You win!" if your score is greater than 100. Retur "You lose" if your score is less than 100.
+  //I created this to show how a game would generate "you win" or "you lose". I like games and this was the easiest way to understand how 
+  //functions work in my mind. 
+
+var myScore = 200;
+
+  function myGame(score){
+    if( myScore > 100){
+        return "You win!"
+    }else{
+        return "You lose"
+    }
+  }
+  console.log(myGame(myScore));
 
